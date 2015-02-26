@@ -1,5 +1,7 @@
 package com.technobitia.ted.model;
 
+import jersey.repackaged.com.google.common.base.Objects;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -91,4 +93,21 @@ public class TedResource {
         return html;
     }
 
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                       .add("type", type)
+                       .add("version", version)
+                       .add("title", title)
+                       .add("url", url)
+                       .add("author", authorName)
+                       .add("authorUrl", authorUrl)
+                       .add("providerUrl", providerUrl)
+                       .add("thumbnailUrl", thumbnailUrl)
+                       .add("thumbnailWidth", thumbnailWidth)
+                       .add("thumbnailHeight", thumbnailHeight)
+                       .add("html", html)
+                       .toString();
+    }
+    
 }
